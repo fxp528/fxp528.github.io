@@ -5,8 +5,7 @@
 <script>
 function loadXMLDoc(){
   var xmlhttp;
-  var param = "dept_name=工科系&s_m_desc=必修&y=2"
-  
+  var param = "dept_no=E9"
   var url = "//app-fun.cc.ncku.edu.tw/data/index.php?c=data3&" + param;
   if (window.XMLHttpRequest){
   // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -28,7 +27,7 @@ function loadXMLDoc(){
 function printcontext(obj){
   var out = "";
   for(var i = 0; i < obj.length; i++){
-    out += '<p>'+ obj[i].chinese_co + '</p><br>';
+    out += '<table><th></th>'+ obj[i].chinese_co + '</p><br>';
 	document.getElementById("context").innerHTML = out;
   }
 }
