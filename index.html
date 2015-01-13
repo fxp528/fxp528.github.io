@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script>
+function loadXMLDoc(){
+  var xmlhttp;
+  var param = "dept_name=工科系&s_m_desc=必修&y=2"
+  var url = "//app-fun.cc.ncku.edu.tw/data/index.php?c=data3&" + param;
+  if (window.XMLHttpRequest){
+  // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  }
+  else{
+  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+      var obj = JSON.parse(xmlhttp.responseText);
+	  printcontext(obj);
+    }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+function printcontext(obj){
+  var out = "";
+  for(var i = 0; i < obj.length; i++){
+    out += '<p>'+ obj[i].chinese_co + '</p><br>';
+	document.getElementById("context").innerHTML = out;
+  }
+}
+</script>
+</head>
+<body onload="loadXMLDoc()">
+<div id="context"></div>
+</body>
+</html>
