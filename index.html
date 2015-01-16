@@ -19,7 +19,7 @@ function loadXMLDoc(){
   }
   xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200){
-      all_obj = JSON.parse(xmlhttp.responseText);.
+      all_obj = JSON.parse(xmlhttp.responseText);
 	  $("#status").text("載入成功").fadeOut("slow");
     }
   }
