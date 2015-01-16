@@ -58,11 +58,8 @@ function getObjects(obj, key, val) {
 		</select>
 	</div>
 	<div id="center">
-		<table>
-		<th>課程名稱</th><th>年級</th><th>學分</th><th>選必修</th><th>時間</th><th>地點</th>
-		<tbody>
-		</tbody>
-		</table>
+		
+		
 	</div>
 	<div id="right">
 	</div>
@@ -75,9 +72,9 @@ $("#dept_no").on( "change", function(){
 		var str;
 		var obj = getObjects(all_obj, 'dept_no', 'C1');
 		for (i = 0; i < obj.length; i++) { 
-			str += "<tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td></tr>";
+			str += "<table><th>課程名稱</th><th>年級</th><th>學分</th><th>選必修</th><th>時間</th><th>地點</th><tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td></tr></table>";
 		}
-		$("tbody").html(str);
+		$("center").html(str);
 	}
 });
 </script>
