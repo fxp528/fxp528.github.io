@@ -66,6 +66,26 @@ label {
   -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
+label:after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: #00bf00;
+  background: -moz-linear-gradient(top, #00bf00 0%, #009400 100%);
+  background: -webkit-linear-gradient(top, #00bf00 0%, #009400 100%);
+  background: linear-gradient(to bottom, #00bf00 0%, #009400 100%);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
 </style>
 <body onload="loadXMLDoc()">
 <div id="status"><p>載入數據中...(久沒回應請重新整理)</p></div>
@@ -90,7 +110,7 @@ $("#dept_no").on( "change", function(){
 		var str ="<table><th>系號</th><th>序號</th><th>課程名稱</th><th>年級</th><th>學分</th><th>教師</th><th>選必修</th><th>時間</th><th>地點</th><th>限選條件</th><th>加入課表</th>";
 		var obj = getObjects(all_obj, 'dept_no', 'C1');
 		for (i = 0; i < obj.length; i++) { 
-			str += "<tr><td>"+ obj[i].dept_no+"</td><td>"+ obj[i].course_id+"</td><td>"+ obj[i].course_name +"</td><td style='text-align:center'>"+ obj[i].year + "</td><td style='text-align:center'>"+ obj[i].credit +"</td><td>"+ obj[i].teacher + "</td><td style='text-align:center'>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td><td>"+ obj[i].cond + "</td><td style='text-align:center'><input type='checkbox' id="+ obj[i].id + " style='visibility:hidden'><label for="+ obj[i].id + "></label></td></tr>";
+			str += "<tr><td>"+ obj[i].dept_no+"</td><td>"+ obj[i].course_id+"</td><td>"+ obj[i].course_name +"</td><td style='text-align:center'>"+ obj[i].year + "</td><td style='text-align:center'>"+ obj[i].credit +"</td><td>"+ obj[i].teacher + "</td><td style='text-align:center'>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td><td>"+ obj[i].cond + "</td><td style='text-align:center'><input type='checkbox' id="+ obj[i].id + " style='visibility:hidden'><label for="+ obj[i].id + ">::after</label></td></tr>";
 		}
 		str +="</table>";
 		$("#center").html(str);
