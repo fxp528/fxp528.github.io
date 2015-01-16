@@ -41,7 +41,6 @@ function getObjects(obj, key, val) {
     }
     return objects;
 }
-
 </script>
 <style>
 #status{ width:100%; height:100%; display:block; background:hsla(240, 0%, 50%, 1); position:absolute; margin:0; text-align:center; font-family:"Microsoft JhengHei"; font-size:50px; line-height:500px;}
@@ -73,4 +72,17 @@ function getObjects(obj, key, val) {
 	<div id="bottom"></div>
 </div>
 </body>
+<script>
+$("#dept_no").change(function(){
+	var dept_no = $("#dept_no").val();
+	if(dept_no=='C1'){
+		var str;
+		var obj = getObjects(all, 'dept_no', 'C1');
+		for (i = 0; i < obj.length; i++) { 
+			str += "<tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location"</td></tr>";
+		}
+		$("tbody").html(str);
+	}
+});
+</script>
 </html>
