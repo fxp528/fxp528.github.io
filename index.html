@@ -75,6 +75,7 @@ function getObjects(obj, key, val) {
 <script>
 $("#dept_no").change(function(){
 	if($("#dept_no").val()=='C1'){
+		$("#right").html("1323");
 		var str;
 		var obj = getObjects(all, 'dept_no', 'C1');
 		for (i = 0; i < obj.length; i++) { 
