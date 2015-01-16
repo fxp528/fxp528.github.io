@@ -28,11 +28,14 @@ function printcontext(obj){
   x.appendChild(t);
   document.body.appendChild(x);
   document.getElementById("status").innerHTML="載入成功";
-  
 }
 </script>
 </head>
 <body onload="loadXMLDoc()">
 <div id="status">載入數據中...</div>
+<div></div>
 </body>
+<style>
+#status{ width:100%; height:100%; display:absolute; background:hsla(240, 0%, 50%, 0.6);}
+</style>
 </html>
