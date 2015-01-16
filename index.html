@@ -4,9 +4,7 @@
 <meta charset="utf-8"> 
 <script>
 function loadXMLDoc(){
-  var xmlhttp;
-  var param = "dept_no=E9"
-  var url = "//app-fun.cc.ncku.edu.tw/data/index.php?c=data3&" + param;
+  var xmlhttp; 
   if (window.XMLHttpRequest){
   // code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttp=new XMLHttpRequest();
@@ -21,15 +19,13 @@ function loadXMLDoc(){
 	  printcontext(obj);
     }
   }
-  xmlhttp.open("GET", url, true);
+  xmlhttp.open("GET", "all.txt", true);
   xmlhttp.send();
 }
 function printcontext(obj){
-  var out = "";
-  for(var i = 0; i < obj.length; i++){
-    out += '<table><th></th>'+ obj[i].chinese_co + '</p><br>';
-	document.getElementById("context").innerHTML = out;
-  }
+  var x = document.createElement("SCRIPT");
+  var t = document.createTextNode(obj);
+  x.appendChild(t);
 }
 </script>
 </head>
