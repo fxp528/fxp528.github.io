@@ -72,7 +72,7 @@ $("#dept_no").on( "change", function(){
 		var str;
 		var obj = getObjects(all_obj, 'dept_no', 'C1');
 		for (i = 0; i < obj.length; i++) { 
-			str += "<table><th>課程名稱</th><th>年級</th><th>學分</th><th>選必修</th><th>時間</th><th>地點</th><tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td></tr></table>";
+			str += "<table><th>課程名稱</th><th>年級</th><th>學分</th><th>選必修</th><th>系號</th><th>序號</th><th>時間</th><th>地點</th><tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].dept_no+"</td><td>"+ obj[i].course_id+"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td></tr></table>";
 		}
 		$("center").html(str);
 	}
