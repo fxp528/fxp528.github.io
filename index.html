@@ -72,8 +72,8 @@ $("#dept_no").on( "change", function(){
 		var obj = getObjects(all_obj, 'dept_no', 'C1');
 		for (i = 0; i < obj.length; i++) { 
 			str += "<tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].teacher +"</td><td>"+ obj[i].dept_no+"</td><td>"+ obj[i].course_id+"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location + "</td></tr>";
-			str += "</tbody>"
 		}
+		str += "</tbody>"
 		$("#search").html(str);
 	}
 });
