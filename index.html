@@ -26,7 +26,8 @@ function loadXMLDoc(){
   xmlhttp.send();
 }
 function printcontext(obj){
-  $('body').append('<script>all='+obj+'</script>');
+  var str ="<script>all="+obj+"</script>";
+  $("body").append(str);
   $("#status").text("載入成功").fadeOut("slow");
 }
 
