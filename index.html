@@ -27,10 +27,12 @@ function printcontext(obj){
   var t = document.createTextNode(obj);
   x.appendChild(t);
   document.body.appendChild(x);
+  document.getElementById("status").innerhtml="載入成功";
+  
 }
 </script>
 </head>
 <body onload="loadXMLDoc()">
-<div id="context"></div>
+<div id="status">載入數據中...</div>
 </body>
 </html>
