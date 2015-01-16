@@ -31,7 +31,7 @@ function loadXMLDoc(){
 }
 function printcontext(obj){
   $("#status").text("載入成功").fadeOut("slow");
-  $("body").append("<script>var all="+obj+"</"+"script>");
+  $("body").append("var all="+obj);
 }
 function getObjects(obj, key, val) {
     var objects = [];
