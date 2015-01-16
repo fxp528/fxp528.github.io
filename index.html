@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"> 
@@ -6,10 +6,7 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <script>
-$("#dept_no").on( "change", function(){
-	alert("value");
-
-});
+var all_obj;
 function loadXMLDoc(){
   var xmlhttp; 
   if (window.XMLHttpRequest){
@@ -22,16 +19,12 @@ function loadXMLDoc(){
   }
   xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200){
-      var obj = xmlhttp.responseText;
-	  printcontext(obj);
+      all_obj = JSON.parse(xmlhttp.responseText);.
+	  $("#status").text("載入成功").fadeOut("slow");
     }
   }
   xmlhttp.open("GET", "all.txt", true);
   xmlhttp.send();
-}
-function printcontext(obj){
-  $("#status").text("載入成功").fadeOut("slow");
-  $("body").append("<script>var all="+obj+"</"+"script>");
 }
 function getObjects(obj, key, val) {
     var objects = [];
@@ -76,4 +69,17 @@ function getObjects(obj, key, val) {
 	<div id="bottom"></div>
 </div>
 </body>
+<script>
+$("#dept_no").on( "change", function(){
+	alert("value");
+	if($("#dept_no").val()=='C1'){
+		var str;
+		var obj = getObjects(all_obj, 'dept_no', 'C1');
+		for (i = 0; i < obj.length; i++) { 
+			str += "<tr><td>"+ obj[i].course_name +"</td><td>"+ obj[i].year + "</td><td>"+ obj[i].credit + "</td><td>"+ obj[i].rc +"</td><td>"+ obj[i].time+"</td><td>"+ obj[i].location"</td></tr>";
+		}
+		$("tbody").html(str);
+	}
+});
+</script>
 </html>
