@@ -27,7 +27,7 @@ function loadXMLDoc(){
 }
 function printcontext(obj){
   $("body").append("<script>all="+obj+"</"+"script>");
-  $("#status").text("載入成功");
+  $("#status").text("載入成功").fadeout("slow");
 }
 
 </script>
@@ -40,7 +40,7 @@ function printcontext(obj){
 #right{ float:right;}
 </style>
 <body onload="loadXMLDoc()">
-<div id="status">載入數據中...</div>
+<div id="status"><p>載入數據中...</p></div>
 <div id="content">
 	<div id="header">頭</div>
 	<div id="left">
