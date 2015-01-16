@@ -22,7 +22,7 @@ function loadXMLDoc(){
   }
   xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200){
-      var obj = JSON.parse(xmlhttp.responseText);
+      var obj = xmlhttp.responseText;
 	  printcontext(obj);
     }
   }
@@ -31,7 +31,7 @@ function loadXMLDoc(){
 }
 function printcontext(obj){
   $("#status").text("載入成功").fadeOut("slow");
-  $("body").append("var all="+obj);
+  $("body").append("<script>var all="+obj+"</"+"script>");
 }
 function getObjects(obj, key, val) {
     var objects = [];
