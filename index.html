@@ -73,8 +73,7 @@ function getObjects(obj, key, val) {
 </div>
 </body>
 <script>
-$("#dept_no").change(function(){
-	alert( "Handler for .change() called." );
+$("#dept_no").on( "change", function(){
 	if($("#dept_no").val()=='C1'){
 		var str;
 		var obj = getObjects(all, 'dept_no', 'C1');
